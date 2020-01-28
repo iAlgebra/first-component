@@ -1,16 +1,29 @@
-function getMood() {
-	const moods = ['Angry', 'Happy', 'Sad', 'Pumped', 'Hungry'];
-	return moods[Math.floor(Math.random() * moods.length)];
+function getNum() {
+    return Math.ceil(Math.random() * 10);
 }
 
-class Hello extends React.Component {
-	render() {
-		return (
-			<div>
-				<h1>My current mood is: {getMood()}</h1>
-			</div>
-		);
-	}
+class NumPicker extends React.Component {
+    render() {
+        const num = getNum();
+        let msg;
+        if (num === 7) {
+            msg =
+                <div>
+                    <h2>CONGRATS YOU WIN!!!</h2>
+                    <img src="https://media.giphy.com/media/nXxOjZrbnbRxS/giphy.gif"/>
+                </div>
+        } else {
+            msg = <p>SORRY YOU LOSE!</p>
+        }
+        return (
+            <div>
+                <h1>Your number is: {num}</h1>
+                {msg}
+                {/*<p>{num === 7 ? 'Congrats!' : 'Condolences!'}</p>*/}
+                {/*{num === 7 && <img src="https://media.giphy.com/media/nXxOjZrbnbRxS/giphy.gif" />}*/}
+            </div>
+        );
+    }
 }
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(<NumPicker/>, document.getElementById('root'));
