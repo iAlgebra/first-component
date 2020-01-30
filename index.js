@@ -1,13 +1,18 @@
-class Hello extends React.Component {
-	render() {
-		return (
-			<div>
-				<h1>Hello there!</h1>
-				<h1>Hello there!</h1>
-				<h1>Hello there!</h1>
-			</div>
-		);
-	}
+class App extends React.Component {
+  render() {
+    return (
+        <div>
+          <Friend
+              name="Gaby"
+              hobbies={['puzzles', 'programming', 'petting dogs']}
+          />
+          <Friend
+              name="Fab"
+              hobbies={['swimming', 'watch football']}
+          />
+        </div>
+    );
+  }
 }
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
